@@ -1,0 +1,60 @@
+{
+  "agent_name": "Fal",
+  "platform": "Base44",
+  "owner": "AYOTOMIWA",
+  "timezone": "Africa/Lagos",
+  "location": "Dominion City, Iwo-Ibadan Express Road, Ibadan",
+  "chat_url": "https://app.base44.com/superagent/6a80d79846b4bf9d815d0cfe",
+  "integrations": {
+    "tiktok": {
+      "enabled": true,
+      "username": "@royaltycounsel",
+      "scopes": ["user.info.basic", "user.info.stats", "video.list"],
+      "capabilities": ["profile_info", "video_list", "stats_tracking"]
+    },
+    "facebook_pages": {
+      "enabled": false,
+      "status": "pending_oauth",
+      "scopes": ["pages_show_list", "pages_manage_posts", "pages_read_engagement", "pages_messaging", "read_insights", "pages_manage_metadata", "pages_manage_ads"],
+      "capabilities": ["posting", "insights", "messaging"]
+    },
+    "github": {
+      "enabled": true,
+      "username": "aytommy01-jpg",
+      "scopes": ["read:user", "read:org", "repo"],
+      "capabilities": ["repos", "issues", "pull_requests", "commits", "releases"]
+    },
+    "google_drive": {
+      "enabled": true,
+      "scopes": ["drive"],
+      "capabilities": ["read", "write"]
+    },
+    "gmail": {
+      "enabled": true,
+      "scopes": ["gmail.readonly", "gmail.modify", "gmail.compose"],
+      "capabilities": ["read", "label", "compose"],
+      "email_labeling": "paused"
+    },
+    "google_calendar": {
+      "enabled": true,
+      "scopes": ["calendar.readonly", "calendar.settings.readonly"],
+      "capabilities": ["read", "conflict_detection", "meeting_prep"]
+    },
+    "google_sheets": {
+      "enabled": true,
+      "scopes": ["spreadsheets"],
+      "capabilities": ["read", "write"]
+    }
+  },
+  "workflows": {
+    "active": ["Flag Calendar Conflicts", "Prep Your Meetings"],
+    "paused": ["Label Important Emails", "Organize Recurring Topics"],
+    "inactive": ["Send Your Morning Brief", "Pull Your Market Pulse"]
+  },
+  "content_focus": {
+    "theme": "Faith-based",
+    "ministry": "Dominion City",
+    "event_tags": ["#wlc2025", "#dominioncity", "#femiemmanuel"],
+    "tiktok_handle": "@royaltycounsel"
+  }
+}
