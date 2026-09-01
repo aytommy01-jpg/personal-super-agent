@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fal — Personal Super Agent</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --green: #3fb950;
+      --yellow: #d29922;
+      --red: #f85149;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    header { text-align: center; margin-bottom: 3rem; }
+    header h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, var(--accent), #a371f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    header p { color: var(--muted); margin-top: 0.5rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+    .card p { color: var(--muted); font-size: 0.9rem; }
+    .status { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+    .status.connected { background: rgba(63,185,80,0.15); color: var(--green); }
+    .status.pending { background: rgba(210,153,34,0.15); color: var(--yellow); }
+    .status.paused { background: rgba(139,148,158,0.15); color: var(--muted); }
+    .section-title { font-size: 1.3rem; margin: 2rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+    .stats { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .stat { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.5rem; text-align: center; flex: 1; min-width: 120px; }
+    .stat .num { font-size: 1.8rem; font-weight: 700; color: var(--accent); }
+    .stat .label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+    footer { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.8rem; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🤖 Fal</h1>
+    <p>Personal Super Agent — powered by Base44</p>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><div class="num">7</div><div class="label">Integrations</div></div>
+    <div class="stat"><div class="num">6</div><div class="label">Workflows</div></div>
+    <div class="stat"><div class="num">2</div><div class="label">Active</div></div>
+    <div class="stat"><div class="num">12+</div><div class="label">TikTok Videos</div></div>
+  </div>
+
+  <h2 class="section-title">Connected Integrations</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>🎵 TikTok <span class="status connected">Connected</span></h3>
+      <p>@royaltycounsel — Profile stats, video list, growth tracking</p>
+    </div>
+    <div class="card">
+      <h3>📘 Facebook Pages <span class="status pending">Pending</span></h3>
+      <p>Posting, insights, messaging — awaiting OAuth</p>
+    </div>
+    <div class="card">
+      <h3>🐙 GitHub <span class="status connected">Connected</span></h3>
+      <p>Repos, issues, PRs, commits, releases</p>
+    </div>
+    <div class="card">
+      <h3>📁 Google Drive <span class="status connected">Connected</span></h3>
+      <p>Full read/write file management</p>
+    </div>
+    <div class="card">
+      <h3>📧 Gmail <span class="status connected">Connected</span></h3>
+      <p>Read, label, compose — labeling paused</p>
+    </div>
+    <div class="card">
+      <h3>📅 Google Calendar <span class="status connected">Connected</span></h3>
+      <p>Event reading, conflict detection, meeting prep</p>
+    </div>
+    <div class="card">
+      <h3>📊 Google Sheets <span class="status connected">Connected</span></h3>
+      <p>Read/write spreadsheet data</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">Workflows</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>📅 Flag Calendar Conflicts <span class="status connected">Active</span></h3>
+      <p>Detects double-bookings automatically</p>
+    </div>
+    <div class="card">
+      <h3>📋 Prep Your Meetings <span class="status connected">Active</span></h3>
+      <p>30-min prep before each meeting</p>
+    </div>
+    <div class="card">
+      <h3>🏷️ Label Important Emails <span class="status paused">Paused</span></h3>
+      <p>Auto-labels inbox — paused to save credits</p>
+    </div>
+    <div class="card">
+      <h3>📨 Organize Recurring Topics <span class="status paused">Paused</span></h3>
+      <p>Newsletter/promo sorting — paused</p>
+    </div>
+    <div class="card">
+      <h3>☀️ Morning Brief <span class="status paused">Inactive</span></h3>
+      <p>Daily 8:00 AM brief — calendar, email, markets, tech</p>
+    </div>
+    <div class="card">
+      <h3>📈 Market Pulse <span class="status paused">Inactive</span></h3>
+      <p>Daily 9:00 AM — Nigerian & global market insights</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">Content Focus</h2>
+  <div class="card">
+    <h3>⛪ Faith-Based Content</h3>
+    <p>Dominion City / WLC2025 — TikTok @royaltycounsel</p>
+    <p style="margin-top:0.5rem;">Tags: #wlc2025 #dominioncity #femiemmanuel #galilee</p>
+  </div>
+
+  <footer>
+    <p>Built by <strong>AYOTOMIWA</strong> · Dominion City, Ibadan</p>
+    <p style="margin-top:0.5rem;">Powered by <a href="https://base44.com" target="_blank">Base44</a> · <a href="https://github.com/aytommy01-jpg/personal-super-agent" target="_blank">View on GitHub</a></p>
+  </footer>
+</body>
+</html>
